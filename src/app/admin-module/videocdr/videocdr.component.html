@@ -1,0 +1,49 @@
+<div *ngIf="session.islogined()">
+<!-- video-call-cdr.component.html -->
+<form [formGroup]="videocdr" (ngSubmit)="generateCDRs()">
+    <h1>Generate Video Call Detail Records (CDRs)</h1>
+   
+    <label for="numCDRs">Enter the number of CDRs to generate:</label>
+    <input type="number" id="n" name="n" formControlName="n" required>
+    <br>
+   
+    <button type="submit" class="btn btn-primary">Generate Video Call CDRs</button>
+</form>
+<br><br>
+
+<h1>Generated Video Call Detail Records (CDRs)</h1>
+
+<table class="table" datatable [dtOptions]="dtoptions" *ngIf="searchlist.length>0">
+  <thead>
+    <tr>
+      <th>Call ID</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Call Duration</th>
+      <th>Host Caller Number</th>
+      <th>Host Call Status</th>
+      <th>Participants</th>
+      <th>Call Type</th>
+      <th>Video Quality Metrics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let videoCDR of searchlist">
+      <td>{{ videoCDR.callId }}</td>
+      <td>{{ videoCDR.startTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td>{{ videoCDR.endTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td>{{ videoCDR.callDuration }} minutes</td>
+      <td>{{ videoCDR.hostCallerNumber }}</td>
+      <td>{{ videoCDR.hostCallStatus }}</td>
+      <td [innerHTML]="videoCDR.participants"></td>
+      <td>{{ videoCDR.callType }}</td>
+      <td [innerHTML]="videoCDR.videoQualityMetrics"></td>
+    </tr>
+  </tbody>
+</table>
+<!-- Button to download Video Call CDRs -->
+<button (click)="downloadCdr()" class="btn btn-primary">Download Video Call CDRs</button>
+</div>
+<div *ngIf="!session.islogined()">
+  {{navigatetohome()}}
+  </div>

@@ -1,0 +1,54 @@
+<div *ngIf="session.islogined()">
+<form [formGroup]="voipcdr" (ngSubmit)="generateCDRs()" >
+    
+    <h1>Generate Call Detail Records (CDRs)</h1>
+   
+    <label for="n">Enter the number of CDRs to generate:</label>
+    <input type="number" id="n" name="n" formControlName="n" required>
+    <br>
+   
+    <button type="submit" class="btn btn-primary">Generate Cdr's</button>
+</form><br><br>
+
+
+<table class="table" datatable [dtOptions]="dtoptions" *ngIf="searchlist.length>0">
+    <thead>
+        <tr>
+            <th>Call Start Time</th>
+            <th>Call End Time</th>
+            <th>Call Duration (Minutes)</th>
+            <th>Source IP Address</th>
+            <th>Destination IP Address</th>
+            <th>Call Direction</th>
+            <th>Call Type</th>
+            <th>Codec Used</th>
+            <th>Quality Metrics</th>
+            <th>Call Termination Reason</th>
+            <th>Call ID</th>
+            <th>Call Setup Time (Seconds)</th>
+            <th>Call Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cdr of searchlist">
+            <td>{{ cdr.callStartTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ cdr.callEndTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ cdr.callDurationMinutes }}</td>
+            <td>{{ cdr.sourceIP }}</td>
+            <td>{{ cdr.destinationIP }}</td>
+            <td>{{ cdr.callDirection }}</td>
+            <td>{{ cdr.callType }}</td>
+            <td>{{ cdr.codecUsed }}</td>
+            <td>{{ cdr.qualityMetrics }}</td>
+            <td>{{ cdr.callTerminationReason }}</td>
+            <td>{{ cdr.callID }}</td>
+            <td>{{ cdr.callSetupTime }}</td>
+            <td>{{ cdr.callStatus }}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="downloadCdr()" class="btn btn-primary">Download CDR</button>
+</div>
+<div *ngIf="!session.islogined()">
+    {{navigatetohome()}}
+    </div>

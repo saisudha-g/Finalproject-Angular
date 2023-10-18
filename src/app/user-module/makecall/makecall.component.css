@@ -1,0 +1,210 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* Style the entire caller-container */
+.caller-container {
+  max-width: 400px;
+  background-color: #989dc5;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+
+/* Style the h2 element */
+.caller-container h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+
+
+/* Style the timer */
+.caller-container .timer {
+  
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+
+/* Style the input-container */
+.caller-container .input-container {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+/* Style the input field */
+.caller-container input[type="text"] {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 18px;
+  color: #333;
+  outline: none;
+}
+
+
+
+/* Style the keypad */
+.caller-container .keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+
+
+/* Style the keypad keys */
+.caller-container .key {
+  background-color: #ffffff;
+  color: #989dc5;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Style the "C" key differently */
+.caller-container .key.clear {
+  background-color: #ff0000; /* Red for clear key */
+  color: #ffffff;
+}
+
+
+
+/* Style the "Call" key differently */
+.caller-container .key.call {
+  background-color: #00ff00; /* Green for call key */
+  color: #ffffff;
+}
+
+
+
+/* Style the "End Call" key differently */
+.caller-container .key.end-call {
+  background-color: #ff0000; /* Red for end call key */
+  color: #ffffff;
+}
+
+
+
+/* Add hover animation to keys */
+.caller-container .key:hover {
+  background-color: #5a5f85; /* Change to a darker color on hover */
+}
+
+/* Style the container */
+
+.container {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background-color: #f5f5f5;
+
+}
+
+
+
+/* Style the keypad container on the left */
+
+.keypad-container {
+
+  flex: 1; /* Take up available space */
+
+  background-color: #989dc5;
+
+  color: #ffffff;
+
+  padding: 20px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  max-width: 400px; /* Set a maximum width */
+
+}
+
+
+
+/* Style the cards container on the right */
+
+.cards-container {
+
+  flex: 2; /* Take up more space on the right */
+
+  display: flex;
+
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+
+  gap: 20px; /* Add spacing between cards */
+  
+}
+
+
+
+/* Style individual cards */
+
+.card {
+
+  flex:1; /* Equal width for all cards */
+
+  background-color: #ffffff;
+  color: #333;
+
+  padding: 100px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+/* Style bullet points within cards */
+
+.card ul {
+
+  list-style-type: disc;
+
+  padding-left: 20px;
+
+}
+
+
+
+/* Additional styling for card headings if needed */
+
+.card h3 {
+
+  font-size: 20px;
+
+  margin-bottom: 10px;
+
+}
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <title>Your Page</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="keypad-container">
+
+            <!-- Your keypad HTML here -->
+            <div class="caller-container">
+                <div><h2>Caller Keypad</h2></div>
+                <div class="timer">{{ timer }}</div>
+                <div class="input-container">
+                <input type="text" id="caller-input" [value]="callerNumberValue" formControlName="callerNumber" readonly>
+                </div><br>
+                <div class="keypad">
+                <div class="key" (click)="appendToCallerInput('1')">1</div>
+                <div class="key" (click)="appendToCallerInput('2')">2</div>
+                <div class="key" (click)="appendToCallerInput('3')">3</div>
+                <div class="key" (click)="appendToCallerInput('4')">4</div>
+                <div class="key" (click)="appendToCallerInput('5')">5</div>
+                <div class="key" (click)="appendToCallerInput('6')">6</div>
+                <div class="key" (click)="appendToCallerInput('7')">7</div>
+                <div class="key" (click)="appendToCallerInput('8')">8</div>
+                <div class="key" (click)="appendToCallerInput('9')">9</div>
+                <div class="key" (click)="appendToCallerInput('#')">#</div>
+                <div class="key" (click)="appendToCallerInput('0')">0</div>
+                <div class="key" (click)="appendToCallerInput('+')">+</div>
+                <div class="key call" (click)="callNumber()">Call</div>
+                <div class="key clear" (click)="clearCallerInput()">C</div>
+                <div class="key end-call" (click)="endCall()">End Call</div>
+                </div>
+                </div>
+        </div>
+
+        <div class="cards-container">
+
+            <div class="card">
+
+                <h3>Caller Keypad</h3>
+
+                <ul>
+
+                    <li>Trial Free Call</li>
+
+                    <li>Call your contacts </li>
+
+                    <!-- Add more bullet points as needed -->
+
+                </ul>
+
+            </div>
+
+            
+
+            <!-- Add more cards as needed -->
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body>
+    <div class="caller-container">
+        <div><h2>Caller Keypad</h2></div>
+        <div class="timer">{{ timer }}</div>
+        <div class="input-container">
+        <input type="text" id="caller-input" [value]="callerNumberValue" formControlName="callerNumber" readonly>
+        </div><br>
+        <div class="keypad">
+        <div class="key" (click)="appendToCallerInput('1')">1</div>
+        <div class="key" (click)="appendToCallerInput('2')">2</div>
+        <div class="key" (click)="appendToCallerInput('3')">3</div>
+        <div class="key" (click)="appendToCallerInput('4')">4</div>
+        <div class="key" (click)="appendToCallerInput('5')">5</div>
+        <div class="key" (click)="appendToCallerInput('6')">6</div>
+        <div class="key" (click)="appendToCallerInput('7')">7</div>
+        <div class="key" (click)="appendToCallerInput('8')">8</div>
+        <div class="key" (click)="appendToCallerInput('9')">9</div>
+        <div class="key" (click)="appendToCallerInput('#')">#</div>
+        <div class="key" (click)="appendToCallerInput('0')">0</div>
+        <div class="key" (click)="appendToCallerInput('+')">+</div>
+        <div class="key call" (click)="callNumber()">Call</div>
+        <div class="key clear" (click)="clearCallerInput()">C</div>
+        <div class="key end-call" (click)="endCall()">End Call</div>
+        </div>
+        </div>
+    </body> -->

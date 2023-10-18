@@ -1,0 +1,202 @@
+
+
+/* Style the entire split-container */
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* justify-content: ;
+  align-items: center; Vertically center the content */
+}
+
+
+
+/* Style the left split with mobile recharge plans */
+.left-split {
+  background-color: #ffffff; /* White background */
+  color: #989dc5; /* Lavender text color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex: 1; /* Allow the left side to grow to fill space */
+}
+
+
+
+/* Style the h2 element in the left split */
+.left-split h2 {
+  color: #989dc5;
+  margin-bottom: 20px;
+}
+
+
+
+/* Style the plan cards in the left split */
+.plan-card {
+  background-color: #989dc5;
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Add hover animation to plan cards */
+.plan-card:hover {
+  background-color: #5a5f85; /* Change to a darker color on hover */
+}
+
+
+
+/* Style the buttons inside plan cards */
+.plan-card button {
+  background-color: #ffffff;
+  color: #989dc5;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Add hover animation to buttons */
+.plan-card button:hover {
+  background-color: #5a5f85; /* Change to a darker color on hover */
+}
+
+
+
+/* Style the right split with the registration form */
+.right-split {
+  background-color: #989dc5; /* Lavender background */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex: 1; /* Allow the right side to grow to fill space */
+  height: 98%;
+}
+
+
+
+/* Style the h2 element in the right split */
+.right-split h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+
+
+/* Style the form labels */
+.right-split label {
+  color: #ffffff;
+}
+
+
+
+/* Style the input fields */
+.right-split input[type="text"],
+.right-split input[type="email"],
+.right-split input[type="password"]
+ {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+
+/* Style the submit button */
+.right-split button.btn-primary {
+  background-color: #ffffff;
+  color: #989dc5;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* Add hover animation to the submit button */
+.right-split button.btn-primary:hover {
+  background-color: #52dede; /* Change to a darker color on hover */
+}
+.carousel-container {
+
+  flex: 1; /* Take up the left side */
+
+  margin-right: 20px; /* Add some spacing between the carousel and login form */
+
+}
+
+.container {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+ 
+
+.carousel-container {
+
+  flex: 1; /* Take up the right side */
+
+  margin-left: 20px; /* Add some spacing between the carousel and registration form */
+
+}
+
+ 
+
+.split-container {
+
+  flex: 1; /* Take up the left side */
+
+}
+
+
+/* Style for dropdowns with the class 'right-split' */
+
+.right-split select {
+
+  width: 100%; /* Set the width of the dropdown */
+
+  padding: 10px; /* Add padding for visual appeal */
+
+  border: 1px solid #ccc; /* Add a border */
+
+  border-radius: 5px 5px 5px 5px; /* Rounded corners on the right side */
+
+  background-color: #fff; /* Set background color */
+
+  color: #333; /* Set text color */
+
+  font-size: 16px; /* Set font size */
+
+  outline: none; /* Remove the default focus outline */
+
+}
+
+ 
+
+/* Style for dropdowns when they are focused or hovered */
+
+.right-split select:hover,
+
+.right-split select:focus {
+
+  border-color: #007BFF; /* Change border color on hover/focus */
+
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow */
+
+}

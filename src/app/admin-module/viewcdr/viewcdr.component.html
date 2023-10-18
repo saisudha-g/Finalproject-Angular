@@ -1,0 +1,77 @@
+
+<!-- Font Awesome Cdn Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<div *ngIf="session.islogined()">
+<div class="container">
+  <section class="main">
+    <div class="main-skills">
+      <div class="card">
+        <i class="fas fa-broadcast-tower"></i>
+        <h3>VOICE<br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/voicecdr">voicecdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-sms"></i>
+        <h3>SMS<br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/smscdr">smscdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-calendar"></i>
+        <h3>VOIP <br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/voipcdr">voipcdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-globe"></i>
+        <h3>ROAMING CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/roamingcdr">roamingcdr</button>
+      </div>
+    </div>
+
+    <div class="main-skills">
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>DATA<br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/datacdr">datacdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker"></i>
+        <h3>LOCATION CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/locationcdr">locationcdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-comment"></i>
+        <h3>MMS<br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/mmscdr">MMScdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-play"></i>
+        <h3>VIDEO<br> CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/videocdr">videocdr</button>
+      </div>
+    </div>
+
+    <div class="main-skills">
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>VOIPCON <br>CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/voipconcdr">voipconcdr</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>TOLL-FREE CDR</h3>
+        <button type="submit" class="btn btn-primary" routerLink="/tollcdr">tollfreecdr</button>
+      </div>
+
+    </div>
+
+
+  </section>
+</div>
+</div>
+
+<div *ngIf="!session.islogined()">
+{{navigatetohome()}}
+</div>
+
+
+<router-outlet></router-outlet>

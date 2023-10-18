@@ -1,0 +1,92 @@
+
+
+<div *ngIf="session.islogined()">
+<form [formGroup]="voicecdr" (ngSubmit)="generateCDRs()" >
+    
+    <h1>Generate Call Detail Records (CDRs)</h1>
+   
+    <label for="n">Enter the number of CDRs to generate:</label>
+    <input type="number" id="n" name="n" formControlName="n" required>
+    <br>
+   
+    <button type="submit" class="btn btn-primary">Generate Cdr's</button>
+</form><br><br>
+<table class="table" datatable [dtOptions]="dtoptions" *ngIf="searchlist.length>0">
+
+    <thead>
+  
+      <tr>
+  
+        <th>callStartTime</th>
+  
+        <th>callEndTime</th>
+  
+        <th>callerNumber</th>
+  
+        <th> recipientNumber</th>
+  
+        <th>CallDuration</th>
+  
+        <th>callType</th>
+        <th>callQualityMetrics</th>
+        <th>callResult</th>
+        <th>callID</th>
+        <th>callDirection</th>
+
+  
+        <!-- <th>Download</th> -->
+     
+      </tr>
+  
+    </thead>
+  
+    <tbody>
+  
+      <tr *ngFor="let cdrs of searchlist">
+  
+        <td>{{ cdrs.callStartTime}}</td>
+        <td>{{ cdrs.callEndTime}}</td>
+        <td>{{ cdrs.callerNumber}}</td>
+       <td>{{ cdrs.recipientNumber}}</td>
+        <td>{{ cdrs.callDurationMinutes}}</td>
+        <td>{{ cdrs.callType}}</td>
+        <td>callQualityMetrics:{{ cdrs.callQualityMetrics}}</td>
+        <td>{{ cdrs.callResult}}</td>
+       <td>{{ cdrs.callID}}</td>
+        <td>{{ cdrs.callDirection}}</td>
+  
+        <!-- <td><button (click)="downloadCdr()">Download</button></td> -->
+  
+      </tr>
+  
+    </tbody>
+  
+  </table>
+  <!-- Table content -->
+
+<!-- <div style="display: block">
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          >
+  </canvas>
+</div> -->
+
+  <button (click)="downloadCdr()" class="btn btn-primary">Download CDR</button>
+</div>
+
+  <div *ngIf="!session.islogined()">
+    {{navigatetohome()}}
+    </div>
+<script>
+  function toggleSidebar(ref){
+  document.getElementById("sidebar").classList.toggle('active');
+}
+
+
+</script>
+
+
+

@@ -1,0 +1,13 @@
+<div *ngIf="session.islogined()">
+<a routerLink="/adminhome" class="link-with-arrow">
+    Home
+  <span class="arrow-icon">→</span> 
+  </a><br><br>
+<div class="search-container">
+    <input type="text" placeholder="Search..." class="search-input" [(ngModel)]="searchText">
+    <button class="search-button" (click)="onSearch()">Search</button>
+    </div>
+  </div>
+  <div *ngIf="!session.islogined()">
+    {{navigatetohome()}}
+    </div>

@@ -1,0 +1,119 @@
+<div class="split-container">
+<div class="container">
+
+    <div class="carousel-container">
+  
+      <div id="carouselExampleFade" class="carousel slide carousel-fade">
+
+<!-- Carousel content goes here -->
+<div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://img.freepik.com/premium-vector/pensive-girl-online-sign-up-concept-female-character-flat-design-vector-cartoon-illustration-web-apps-landing-page_258190-1305.jpg?w=740" class="d-block w-100" class="d-block w-100" alt="...">
+              </div>
+           
+           
+          </div>
+          
+          </div>
+  
+      </div>
+  
+    </div>
+  
+   
+
+<!-- Left split for registration fields -->
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="left-split">
+
+<!-- Registration form content goes here -->
+<div class="right-split">
+            <h2>Registration</h2>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" formControlName="name">
+                <div *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+                    <small style="color: crimson; " *ngIf="registrationForm.get('name')?.hasError('required')">Name is
+                        required.</small>
+                    <small style="color: crimson; " *ngIf="registrationForm.get('name')?.hasError('minlength')">Name
+                        must be at least 3 characters.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" formControlName="address">
+                <div *ngIf="registrationForm.get('address')?.invalid && registrationForm.get('address')?.touched">
+                    <small style="color: crimson; "
+                        *ngIf="registrationForm.get('address')?.hasError('required')">Address is required.</small>
+                    <small style="color: crimson;"
+                        *ngIf="registrationForm.get('address')?.hasError('minlength')">Address must be at least 7
+                        characters.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" formControlName="phoneNumber">
+                <div
+                    *ngIf="registrationForm.get('phoneNumber')?.invalid && registrationForm.get('phoneNumber')?.touched">
+                    <small style="color: crimson; "
+                        *ngIf="registrationForm.get('phoneNumber')?.hasError('required')">Phonenumber is
+                        required</small>
+                    <small style="color: crimson;"
+                        *ngIf="registrationForm.get('phoneNumber')?.hasError('minlength')">Phonenumber must be equal to
+                        10 numbers.</small>
+                    <small style="color: crimson;"
+                        *ngIf="registrationForm.get('phoneNumber')?.hasError('maxlength')">Phonenumber must be equal to
+                        10 numbers.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" formControlName="email">
+                <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+                    <small style="color: crimson; " *ngIf="registrationForm.get('email')?.hasError('required')">Email is
+                        required.</small>
+                    <small style="color: crimson; " *ngIf="registrationForm.get('email')?.hasError('email')">Please
+                        enter a valid email address.</small>
+                    <small style="color: crimson; " *ngIf="registrationForm.get('email')?.hasError('pattern')">Please
+                        enter a valid email address.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="plan">Plans</label>
+                <select  id="plan" placeholder="Select" formControlName="plan">
+
+                    <option value="default">--Select a Plan--</option>
+
+                    <option *ngFor="let c of plans" value="{{c}}">{{c}}</option>
+
+                  </select>
+            
+            </div>
+
+<div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password">
+                <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+                    <small style="color: crimson; "
+                        *ngIf="registrationForm.get('password')?.hasError('required')">Password is required.</small>
+                    <small style="color: crimson; "
+                        *ngIf="registrationForm.get('password')?.hasError('minlength')">Password must be at least 8
+                        characters.</small>
+<small style="color: crimson; "*ngIf="registrationForm.get('password')?.hasError('pattern')">Password format is invalid.</small>
+</div>
+            </div><br>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Register</button>
+
+
+</div>
+  
+      </form>
+  
+    </div>
+  

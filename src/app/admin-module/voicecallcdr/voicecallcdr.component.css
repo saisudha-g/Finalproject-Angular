@@ -1,0 +1,68 @@
+/* Style for the form */
+
+
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #786ee0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Style for the table */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .table th {
+    background-color: #08080c;
+   
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* Style for the Download CDR button */
+  .button-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #07070b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  

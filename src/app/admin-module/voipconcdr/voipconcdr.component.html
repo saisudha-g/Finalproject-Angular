@@ -1,0 +1,57 @@
+<div *ngIf="session.islogined()">
+<form [formGroup]="voipconcdr" (ngSubmit)="generateCDRs()">
+    <h1>Generate Video Call Detail Records (CDRs)</h1>
+   
+    <label for="numCDRs">Enter the number of CDRs to generate:</label>
+    <input type="number" id="n" name="n" formControlName="n" required>
+    <br>
+   
+    <button type="submit" class="btn btn-primary">Generate Video Call CDRs</button>
+</form>
+<br><br>
+<table class="table" datatable [dtOptions]="dtoptions" *ngIf="searchlist.length>0">
+    <thead>
+      <tr>
+        <th>Meeting ID</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Call Duration (minutes)</th>
+        <th>Host Caller IP</th>
+        <th>Host Call Status</th>
+        <th>Participants</th>
+        <th>Participant Statuses</th>
+        <!-- <th>Call Status</th> -->
+        <th>Call Direction</th>
+        <th>Call Termination Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cdr of searchlist">
+        <td>{{ cdr.meetingId }}</td>
+        <td>{{ cdr.startTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ cdr.endTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td>{{ cdr.callDuration }}</td>
+        <td>{{ cdr.hostCallerIP }}</td>
+        <td>{{ cdr.hostCallStatus }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let participant of cdr.participantIPs">{{ participant }}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let status of cdr.participantStatuses">{{ status }}</li>
+          </ul>
+        </td>
+        <!-- <td>{{ cdr.callStatus }}</td> -->
+        <td>{{ cdr.callDirection }}</td>
+        <td>{{ cdr.callTerminationReason }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<button (click)="downloadCdr()" class="btn btn-primary">Download Video Call CDRs</button>
+</div>
+<div *ngIf="!session.islogined()">
+  {{navigatetohome()}}
+  </div>

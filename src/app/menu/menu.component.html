@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>CDR</title>
+</head>
+<body>
+    
+    <!-- nav bar strats -->
+    <header class="header_section">
+        <div *ngIf="!session.islogined()" class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <img src="https://img.freepik.com/premium-vector/viber-icon_578229-264.jpg?w=740" alt="">
+              <span>
+                CDR
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item ">
+                    <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/register"> REGISTER</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">LOGIN</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!------------------------------------------------------------>
+        <div *ngIf="session.islogined()" class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="index.html">
+                <img src="https://img.freepik.com/premium-vector/viber-icon_578229-264.jpg?w=740" alt="">
+                <span>
+                  CDR
+                </span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item ">
+                      <a class="nav-link" routerLink="/adminhome">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" routerLink="/viewcdr">CDR's<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="session.logout()">LOGOUT</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+      </header>
+    
+    <!--navbar-end-->
+  
+</body>
+</html>
+<router-outlet></router-outlet>

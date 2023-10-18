@@ -1,0 +1,55 @@
+<div *ngIf="session.islogined()">
+<form [formGroup]="tollcdr" (ngSubmit)="generateCDRs()" >
+    
+    <h1>Generate Call Detail Records (CDRs)</h1>
+   
+    <label for="n">Enter the number of CDRs to generate:</label>
+    <input type="number" id="n" name="n" formControlName="n" required>
+    <br>
+   
+    <button type="submit" class="btn btn-primary">Generate Cdr's</button>
+</form><br><br>
+<table class="table"datatable [dtOptions]="dtoptions" *ngIf="searchlist.length>0">
+    <thead>
+        <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Call Duration</th>
+            <th>Caller's Number</th>
+            <th>Dialed Number</th>
+            <th>Call Status</th>
+            <th>Destination Department</th>
+            <th>Call Type</th>
+            <!-- <th>Cost</th> -->
+            <th>Source Region</th>
+            <th>Unique Call ID</th>
+            <th>Recording Status</th>
+            <th>Agent ID</th>
+            <th>Outcome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cdr of searchlist">
+            <td>{{ cdr.startTime }}</td>
+            <td>{{ cdr.endTime}}</td>
+            <td>{{ cdr.callDuration }} minutes</td>
+            <td>{{ cdr.callerNumber }}</td>
+            <td>{{ cdr.dialedNumber }}</td>
+            <td>{{ cdr.callStatus }}</td>
+            <td>{{ cdr.destinationDepartment }}</td>
+            <td>{{ cdr.callType }}</td>
+            <!-- <td>${{ cdr.cost  }}</td> -->
+            <td>{{ cdr.sourceRegion }}</td>
+            <td>{{ cdr.uniqueCallID }}</td>
+            <td>{{ cdr.recordingStatus}}</td>
+            <td>{{ cdr.agentID }}</td>
+            <td>{{ cdr.outcome }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="downloadCdr()" class="btn btn-primary">Download CDR</button>
+</div>
+<div *ngIf="!session.islogined()">
+    {{navigatetohome()}}
+    </div>

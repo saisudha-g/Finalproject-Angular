@@ -1,0 +1,11 @@
+<div class="call-history">
+    <h2>Call History</h2>
+    <div class="call-entry" *ngFor="let entry of callHistory">
+    <div class="call-info">
+    <span class="direction">{{ entry.direction }}</span><br>
+    <span class="caller">Caller: {{ entry.caller }}</span><br>
+    <span class="callee">Callee: {{ entry.callee }}</span><br>
+    <span class="duration">Duration: {{ entry.duration }}</span>
+    </div>
+    </div>
+    </div>
