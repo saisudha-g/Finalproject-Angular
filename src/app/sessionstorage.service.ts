@@ -49,12 +49,14 @@ export class SessionstorageService {
       return "true1";
 
     }
-
+  else if(email=='user@gmail.com' && password == 'user@123'){
+    this.log=true;
+    this.setItem('email','password');
+    return "true2";
+  }
     
     else{
-      this.log=true;
-      this.setItem('email','password');
-      return "true2";
+      return"false"
     }
 
  

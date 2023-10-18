@@ -53,9 +53,15 @@ onLoginSuccess(){
     title: 'Welcome User!',
     icon:'success'})
   }
+  else{
+    Swal.fire({
+      title: 'user not permitted!',
+      icon:'error'})
+    }
+  }
   }
   
-  }
+  
   
 
 
