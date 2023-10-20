@@ -1,3 +1,4 @@
+<div *ngIf="session.islogined()">
 <!-- about section -->
   <section class="about_section layout_padding">
     <div class="container">
@@ -97,6 +98,11 @@
    </footer>
  </div>
  
+ 
+ </div>
+
+ <div *ngIf="!session.islogined()">
+  {{navigatetohome()}}
+  </div>
    
-   <!-- footer section -->
   <router-outlet></router-outlet>
